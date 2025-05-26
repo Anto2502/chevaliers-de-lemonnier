@@ -1,0 +1,476 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Enchanted_Land';
+    src: url('../ressources/Enchanted_Land.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Enchanted_Land', serif;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: #f4f1e8;
+    background: #000;
+    cursor: url('../ressources/cursor.cur'), auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../ressources/background.png') repeat,
+                radial-gradient(circle, #1a0e05 0%, #000 100%);
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(184, 145, 97, 0.3);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5e3c, #c9ab86, #8b5e3c);
+    border-radius: 6px;
+    border: 2px solid rgba(244, 241, 232, 0.3);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #c9ab86, #8b5e3c, #c9ab86);
+  }
+
+  h1 {
+    font-size: xx-large;
+  }
+
+  h1, h2 {
+    font-family: 'Enchanted_Land', serif;
+    font-weight: normal;
+  }
+
+  .equipe::before, .equipe::after {
+    content: '👥';
+    margin: 0 0.5em;
+  }
+
+  .theme::before, .theme::after {
+    content: '⚔️';
+    margin: 0 0.5em;
+  }
+
+  .inspiration::before, .inspiration::after {
+    content: '🏛️';
+    margin: 0 0.5em;
+  }
+
+  .vehicule::before, .vehicule::after {
+    content: '🏎️';
+    margin: 0 0.5em;
+  }
+
+  .stand::before, .stand::after {
+    content: '🏕️';
+    margin: 0 0.5em;
+  }
+
+  .costume::before, .costume::after {
+    content: '👑';
+    margin: 0 0.5em;
+  }
+
+  .logo::before, .logo::after {
+    content: '🛡️';
+    margin: 0 0.5em;
+  }
+
+  .design::before, .design::after {
+    content: '📐';
+    margin: 0 0.5em;
+  }
+
+  .eco::before, .eco::after {
+    content: '♻️';
+    margin: 0 0.5em;
+  }
+
+  .fabrication::before, .fabrication::after {
+    content: '🔨';
+    margin: 0 0.5em;
+  }
+
+  .airflow::before, .airflow::after {
+    content: '💨';
+    margin: 0 0.5em;
+  }
+
+  .sponso::before, .sponso::after {
+    content: '🤝';
+    margin: 0 0.5em;
+  }
+
+  .mentions::before, .mentions::after {
+    content: '📜';
+    margin: 0 0.5em;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    border: 4px solid #c9ab86;
+    border-radius: 10px;
+    transition: all 0.7s ease;
+  }
+
+  img:not(.redirect) {
+    max-height: 400px;
+    width: auto;
+  }
+
+  img:hover {
+    cursor: url('../ressources/cursor_up.cur'), auto;
+    transform: scale(1.05);
+    border: 4px solid #a17854;
+  }
+
+  img.redirect:hover {
+    transform: scale(1.15);
+    border: none;
+  }
+
+  img.redirect {
+    max-width: 200px;
+    transition: transform 0.3s ease;
+    border: none;
+  }
+
+  .logo-section img {
+    max-width: 300px;
+    margin: 0.5em;
+  }
+
+  .content {
+    margin-left: 180px;
+    flex: 1;
+  }
+
+  header, section {
+    padding: 2em;
+    text-align: center;
+    background: url('../ressources/background_section.jpeg') center/cover no-repeat;
+    border: 2px solid #b2936d;
+    margin: 2em;
+    border-radius: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+  header {
+    background-color: rgba(139, 94, 60, 0.9);
+    background-image: none;
+    color: white;
+  }
+
+  header h1 {
+    font-size: 50px;
+  }
+
+  header h2 {
+    font-size: 40px;
+  }
+
+  header h2::before, header h2::after {
+    content: '';
+  }
+
+  h1::before, h1::after {
+    content: '⚔︎';
+    margin: 0 0.5em;
+    color: #ffffff;
+  }
+
+  nav {
+    background: url('../ressources/background_section.jpeg') center/cover no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    border-right: 2px solid #a17854;
+    padding-top: 5px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+  }
+  nav:hover {
+    width: 200px;
+  }
+  nav a {
+    cursor: url('../ressources/cursor_up.cur'), auto; 
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.9em;
+    line-height: 1.2;
+    display: block;
+    margin: 0.2em 0;
+    padding: 0.8em 0.1em;
+    color: #2c1b10;
+    text-decoration: none;
+    font-family: 'Enchanted Land', serif;
+    text-align: center;
+    transition: all 0.4s ease;
+    border-radius: 8px;
+    width: 85%;
+    position: relative;
+    background: rgba(167, 132, 95, 1);
+  }
+
+  nav a:hover {
+    background: rgba(139, 94, 60, 0.8);
+    color: #f4f1e8;
+    transform: translateX(5px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  nav a:hover::before {
+    opacity: 1;
+    left: -5px;
+  }
+
+  nav:not(:hover) a {
+    color: transparent;
+    background: none;
+  }
+  nav a::after {
+    content: attr(data-mini);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    color: white;
+  }
+  nav:not(:hover) a::after {
+    opacity: 1;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+  }
+
+  #map {
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin-right: 20px;
+    border: 3px solid #a17854;
+    box-sizing: border-box;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .partenaire {
+    text-align: center;
+  }
+
+  .partenaire.principal img {
+    max-width: 300px;
+    border: none;
+  }
+
+  #lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+  }
+
+  #lightbox-img {
+    pointer-events: none;
+    border: none;
+    border-radius: 0;
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s ease;
+  }
+
+  #lightbox.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #lightbox-img.zoom {
+    transform: scale(0.8);
+    animation: zoomIn 0.3s ease forwards;
+  }
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #map {
+    width: 400px;
+    height: 400px;
+    max-width: 90%;
+    border: 2px solid #c4b197;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .emoji-marker {
+    font-size: 24px; 
+    text-align: center;
+    line-height: 1;
+  }
+
+  .no_underline {
+    text-decoration: none;
+    color: inherit;
+  }
+  .white {
+    color: white;
+  }
+
+  .leaflet-container {
+    background: #fff;
+    image-rendering: pixelated;
+  }
+
+  .map-container {
+    padding: 0;
+    border: none;
+  }
+
+  .leaflet-tile {
+    image-rendering: pixelated;
+  }
+
+  .leaflet-container img,
+  .leaflet-tile {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-sizing: content-box !important;
+    image-rendering: auto;
+    background: none !important;
+    border-radius: 0 !important;
+  }
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    font-size: 20px;
+  }
+  .content {
+    margin-left: 0;
+    margin-top: 70px;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+    border-right: none;
+    border-bottom: 2px solid #a17854;
+  }
+  nav:hover {
+    width: 100%;
+  }
+  nav a {
+    font-size: 1em;
+    padding: 0.5em;
+    width: auto;
+    flex: 0 0 auto;
+    color: #2c1b10 !important;
+    background: rgba(167, 132, 95, 1);
+  }
+  nav:not(:hover) a {
+    color: #2c1b10;
+    background: rgba(167, 132, 95, 1);
+  }
+  nav a::after {
+    display: none;
+  }
+  section, header {
+    margin: 1em;
+    padding: 1em;
+  }
+  img:not(.redirect) {
+    max-height: none;
+    width: 100%;
+  }
+  #map {
+    width: 100%;
+    height: 300px;
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+.leaflet-container {
+  cursor: url('../ressources/cursor.cur'), auto !important;
+}
+
+.leaflet-container a,
+.leaflet-container .leaflet-interactive {
+  cursor: url('../ressources/cursor_up.cur'), auto !important;
+}
