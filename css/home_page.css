@@ -6,7 +6,7 @@
 
   @font-face {
     font-family: 'Enchanted_Land';
-    src: url('../ressources/Enchanted_Land.otf') format('opentype');
+    src: url('../ressources/enchanted_land.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
@@ -156,7 +156,7 @@
   }
 
   img.redirect {
-    max-width: 200px;
+    max-width: 220px;
     transition: transform 0.3s ease;
     border: none;
   }
@@ -228,7 +228,7 @@
     cursor: url('../ressources/cursor_up.cur'), auto; 
     white-space: nowrap;
     overflow: hidden;
-    font-size: 0.9em;
+    font-size: 0.7em;
     line-height: 1.2;
     display: block;
     margin: 0.2em 0;
@@ -242,6 +242,9 @@
     width: 85%;
     position: relative;
     background: rgba(167, 132, 95, 1);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
   }
 
   nav a:hover {
